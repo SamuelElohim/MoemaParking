@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConcluidoController">
+   <children>
+      <ImageView fitHeight="417.0" fitWidth="442.0" layoutX="-318.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/image00001%20(6).png" />
+         </image>
+      </ImageView>
+      <Text fill="#376e9a" layoutX="205.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MoemaParking">
+         <font>
+            <Font name="Corbel" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#376e9a" layoutX="207.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONCLUÍDO!">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="245.0" fitWidth="232.0" layoutX="184.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/image00001%20(2).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="buttonExit" layoutX="555.0" layoutY="362.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonLogin" layoutX="254.0" layoutY="355.0" mnemonicParsing="false" onAction="#facaSeuLogin" style="-fx-background-color: #376e9a;" text="Faça seu LOGIN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

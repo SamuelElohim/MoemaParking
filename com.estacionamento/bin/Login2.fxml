@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <children>
+      <Text fill="#376e9a" layoutX="204.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MoemaParking" wrappingWidth="190.5">
+         <font>
+            <Font name="Corbel" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#376e9a" layoutX="275.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="campoUsuario" layoutX="226.0" layoutY="243.0" />
+      <PasswordField fx:id="campoSenha" layoutX="226.0" layoutY="284.0" />
+      <Text layoutX="180.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário" />
+      <Text layoutX="187.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
+      <Button fx:id="buttonEntrar" layoutX="180.0" layoutY="330.0" mnemonicParsing="false" onAction="#entrarConta" prefWidth="106.83" style="-fx-background-color: #376e9a;" text="Entrar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="96.0" fitWidth="106.0" layoutX="252.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/image00002.png" />
+         </image></ImageView>
+      <ImageView fitHeight="417.0" fitWidth="442.0" layoutX="-318.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/image00001%20(6).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="239.0" fitWidth="215.0" layoutX="394.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagens/image00001%20(2).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="buttonExcluirCadastro" layoutX="300.0" layoutY="330.0" mnemonicParsing="false" onAction="#excluirConta" style="-fx-background-color: #376e9a;" text="Excluir Cadastro" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonExit" layoutX="555.0" layoutY="367.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonPlaca" layoutX="169.0" layoutY="201.0" mnemonicParsing="false" onAction="#lerPlaca" style="-fx-background-color: #376e9a;" text="Ler Placa" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="campoPlaca" layoutX="315.0" layoutY="201.0" />
+      <Text layoutX="247.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Placa" />
+      <Label fx:id="labelUsuario" layoutX="227.0" layoutY="269.0" prefHeight="17.0" prefWidth="199.0" textFill="#dd0303" />
+      <Label fx:id="labelPlaca" layoutX="319.0" layoutY="226.0" prefHeight="17.0" prefWidth="141.0" textFill="#dd0303" />
+      <Label fx:id="labelLogado" alignment="CENTER" layoutX="210.0" layoutY="366.0" prefHeight="21.0" prefWidth="164.0" textFill="#376e9a">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelSenha" layoutX="225.0" layoutY="309.0" prefHeight="17.0" prefWidth="149.0" textFill="#dd0303" />
+   </children>
+</Pane>
