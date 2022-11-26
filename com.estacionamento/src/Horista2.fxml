@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -9,48 +11,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HoristaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HoristaController">
    <children>
-      <Text fill="#376e9a" layoutX="216.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MoemaParking">
-         <font>
-            <Font name="Corbel" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#376e9a" layoutX="279.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horista">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <TextField fx:id="campoUsuario" layoutX="300.0" layoutY="175.0" />
-      <Text layoutX="205.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome de usuario" />
-      <ImageView fitHeight="143.0" fitWidth="278.0" layoutX="189.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Imagens/image00001%20(4).png" />
-         </image>
-      </ImageView>
-      <Button fx:id="buttonCriar" layoutX="288.0" layoutY="225.0" mnemonicParsing="false" onAction="#criarConta" style="-fx-background-color: #376e9a;" text="Criar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="417.0" fitWidth="442.0" layoutX="-318.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Imagens/image00001%20(6).png" />
-         </image>
-      </ImageView>
-      <Button fx:id="buttonExit" layoutX="555.0" layoutY="367.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="9.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonPlaca" layoutX="176.0" layoutY="127.0" mnemonicParsing="false" onAction="#lerPlaca" prefWidth="80.0" style="-fx-background-color: #376e9a;" text="Ler Placa" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <TextField fx:id="campoPlaca" layoutX="342.0" layoutY="127.0" />
-      <Text layoutX="274.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Placa" />
-      <Label fx:id="labelPlaca" layoutX="345.0" layoutY="152.0" prefHeight="17.0" prefWidth="142.0" textFill="#dd0303" />
-      <Label fx:id="labelUsuario" layoutX="299.0" layoutY="200.0" prefHeight="17.0" prefWidth="149.0" textFill="#dd0303" />
+      <Group layoutX="-108.0" layoutY="110.0" scaleX="2.3" scaleY="2.3">
+         <children>
+            <Text fill="#376e9a" layoutX="616.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horista">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="campoUsuario" layoutX="618.0" layoutY="183.0" />
+            <Text layoutX="514.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome de usuario" />
+            <ImageView fitHeight="143.0" fitWidth="278.0" layoutX="507.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagens/image00001%20(4).png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonCriar" layoutX="606.0" layoutY="233.0" mnemonicParsing="false" onAction="#criarConta" style="-fx-background-color: #376e9a;" text="Criar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="417.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagens/image00001%20(6).png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonExit" layoutX="873.0" layoutY="375.0" mnemonicParsing="false" onAction="#exit" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buttonPlaca" layoutX="494.0" layoutY="135.0" mnemonicParsing="false" onAction="#lerPlaca" prefWidth="80.0" style="-fx-background-color: #376e9a;" text="Ler Placa" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="campoPlaca" layoutX="660.0" layoutY="135.0" />
+            <Text layoutX="586.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Placa" />
+            <Label fx:id="labelPlaca" layoutX="663.0" layoutY="160.0" prefHeight="17.0" prefWidth="142.0" textFill="#dd0303" />
+            <Label fx:id="labelUsuario" layoutX="617.0" layoutY="208.0" prefHeight="17.0" prefWidth="149.0" textFill="#dd0303" />
+         </children>
+      </Group>
    </children>
 </Pane>
