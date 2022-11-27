@@ -75,9 +75,10 @@ public class LoginController {
             if(UserList.isUserExist(placa)) {
                 for (Clientes car : UserList.getCarro()) {
                     if(car instanceof Horista) {
-                            if (placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario()) && senha.length() < 1) {
+                        if(senha.length() < 1) {
+                            if (placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario())) {
 
-                                if(car.getTempoDeChegada() != 0 || car.getTempoDeSaida() != 0){
+                                if (car.getTempoDeChegada() != 0 || car.getTempoDeSaida() != 0) {
                                     labelLogado.setText("Está dentro");
                                     labelUsuario.setText("");
                                     labelSenha.setText(" ");
@@ -105,6 +106,7 @@ public class LoginController {
                                 labelSenha.setText(" ");
                                 labelPlaca.setText("");
                             }
+                        }
                     }
                     if(car instanceof Mensalista) {
 
@@ -121,14 +123,16 @@ public class LoginController {
                                 System.out.println(now);
                                 car.setTempoDeChegada(now);
 
-                                ArduinoComands.abrirArduino();
-                                ArduinoComands.openGate2();
-                                ArduinoComands.fecharArduino();
-
                                 labelLogado.setText("LOGADO");
                                 labelUsuario.setText("");
                                 labelSenha.setText(" ");
                                 labelPlaca.setText("");
+
+                                ArduinoComands.abrirArduino();
+                                ArduinoComands.openGate2();
+                                ArduinoComands.fecharArduino();
+
+
                                 break;
                             } else if (senha.length() > 0) {
                                 labelLogado.setText("");

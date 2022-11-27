@@ -61,11 +61,21 @@ public class SaidaController {
     @FXML
     void pagar(ActionEvent event) throws IOException, InterruptedException {
         if(labelValor.getText().length() > 0 && !labelValor.getText().equals("Está fora do estacionamento")) {
-            ArduinoComands.abrirArduino();
-            ArduinoComands.openGate1();
-            ArduinoComands.fecharArduino();
+            String placa = campoPlaca.getText();
+            for (Clientes car : UserList.getCarro()) {
+                if (car.getPlaca().equals(placa)){
+                    car.setTempoDeChegada(0);
+                    car.setTempoDeSaida(0);
 
-            abrirtelafinal();
+                    ArduinoComands.abrirArduino();
+                    ArduinoComands.openGate1();
+                    ArduinoComands.fecharArduino();
+
+                    abrirtelafinal();
+                }
+            }
+
+
         }
         else {
             labelPlaca.setText("Pagamento não realizado");
@@ -106,10 +116,8 @@ public class SaidaController {
                             else {
                                 double valor = (((car.getTempoDeSaida() - car.getTempoDeChegada())/1000)*AlterarValor.getValorHora());
 
-                                car.setTempoDeChegada(0);
-                                car.setTempoDeSaida(0);
 
-                                labelValor.setText(Double.toString(valor));
+                                labelValor.setText(String.format("R$ %,.2f", valor));
                                 labelPlaca.setText("");
                                 labelUsuario.setText(" ");
                                 labelSenha.setText(" ");
@@ -137,8 +145,6 @@ public class SaidaController {
                             long now = System.currentTimeMillis();
                             System.out.print(now);
                             car.setTempoDeSaida(now);
-                            car.setTempoDeChegada(0);
-                            car.setTempoDeSaida(0);
                             labelValor.setText("Mensalista");
                             labelUsuario.setText("");
                             labelPlaca.setText("");
