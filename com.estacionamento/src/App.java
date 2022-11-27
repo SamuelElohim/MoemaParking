@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         stg = primaryStage;
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Menu2.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);

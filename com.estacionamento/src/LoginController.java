@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 
 public class LoginController {
 
@@ -63,7 +64,7 @@ public class LoginController {
         
         long tempoDeChegada = 0;
 
-        Arduino obj = new Arduino("COM4", 115200);
+        Arduino obj = new Arduino("COM5", 115200);
         
 
 
@@ -74,59 +75,75 @@ public class LoginController {
             if(UserList.isUserExist(placa)) {
                 for (Clientes car : UserList.getCarro()) {
                     if(car instanceof Horista) {
-                        if(placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario())) {
-                            long now = System.currentTimeMillis();
-                            System.out.println(now);
-                            car.setTempoDeChegada(now);
+                            if (placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario()) && senha.length() < 1) {
 
-                            labelLogado.setText("LOGADO");
+                                if(car.getTempoDeChegada() != 0 || car.getTempoDeSaida() != 0){
+                                    labelLogado.setText("Está dentro");
+                                    labelUsuario.setText("");
+                                    labelSenha.setText(" ");
+                                    labelPlaca.setText("");
+                                    break;
+                                }
+                                long now = System.currentTimeMillis();
+                                System.out.println(now);
+                                car.setTempoDeChegada(now);
 
-                            ArduinoComands.abrirArduino();
-                            ArduinoComands.openGate2();
-                            ArduinoComands.fecharArduino();
-                            
-                            labelUsuario.setText("");
-                            labelSenha.setText(" ");
-                            labelPlaca.setText("");
-                            break;
-    
-                        } 
-                        else {
-                            labelLogado.setText("");
-                            labelUsuario.setText("Usuário incorreto");
-                            labelSenha.setText(" ");
-                            labelPlaca.setText("");
-                        }
+                                labelLogado.setText("LOGADO");
+
+                                ArduinoComands.abrirArduino();
+                                ArduinoComands.openGate2();
+                                ArduinoComands.fecharArduino();
+
+                                labelUsuario.setText("");
+                                labelSenha.setText(" ");
+                                labelPlaca.setText("");
+                                break;
+
+                            } else {
+                                labelLogado.setText("");
+                                labelUsuario.setText("Usuário incorreto");
+                                labelSenha.setText(" ");
+                                labelPlaca.setText("");
+                            }
                     }
                     if(car instanceof Mensalista) {
-                        if(placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario()) && senha.equals(car.getSenha())) {
-                            long now = System.currentTimeMillis();
-                            System.out.println(now);
-                            car.setTempoDeChegada(now);
 
-                            ArduinoComands.abrirArduino();
-                            ArduinoComands.openGate2();
-                            ArduinoComands.fecharArduino();
+                            if (placa.equals(car.getPlaca()) && usuario.equals(car.getUsuario()) && senha.equals(car.getSenha())) {
 
-                            labelLogado.setText("LOGADO");
-                            labelUsuario.setText("");
-                            labelSenha.setText(" ");
-                            labelPlaca.setText("");
-                            break;
-                        } 
-                        else {
-                            labelLogado.setText("");
-                            labelUsuario.setText("Usuário ou senha incorreto");
-                            labelSenha.setText(" ");
-                            labelPlaca.setText("");
-                        }
+                                if(car.getTempoDeChegada() != 0 || car.getTempoDeSaida() != 0){
+                                    labelLogado.setText("Está dentro");
+                                    labelUsuario.setText("");
+                                    labelSenha.setText(" ");
+                                    labelPlaca.setText("");
+                                    break;
+                                }
+                                long now = System.currentTimeMillis();
+                                System.out.println(now);
+                                car.setTempoDeChegada(now);
+
+                                ArduinoComands.abrirArduino();
+                                ArduinoComands.openGate2();
+                                ArduinoComands.fecharArduino();
+
+                                labelLogado.setText("LOGADO");
+                                labelUsuario.setText("");
+                                labelSenha.setText(" ");
+                                labelPlaca.setText("");
+                                break;
+                            } else if (senha.length() > 0) {
+                                labelLogado.setText("");
+                                labelUsuario.setText("Usuário ou senha incorreto");
+                                labelSenha.setText(" ");
+                                labelPlaca.setText("");
+                            }
+
                     }
                }
             } 
             else {
-                labelUsuario.setText("PLACA NÃO CADASTRADA");
+                labelUsuario.setText("");
                 labelSenha.setText(" ");
-                labelPlaca.setText("");
+                labelPlaca.setText("NÃO CADASTRADA");
                 labelLogado.setText("");
             }
         }
@@ -160,20 +177,28 @@ public class LoginController {
 
                         if(car.getPlaca().equals(placa) && car.getUsuario().equals(usuario)) {
                             UserList.excluirCarro(car);
-                            labelLogado.setText("USUÁRIO EXCLUÍDO");
+                            labelLogado.setText("Cadastro Excluído");
+                            labelLogado.setTextFill(Paint.valueOf("#FF0000"));
+                            labelUsuario.setText("");
+                            labelSenha.setText(" ");
+                            labelPlaca.setText("");
 
                         }
                         
                         
                     }
                     if(car instanceof Mensalista) {
-                        if(placa.length() < 1 || usuario.length() < 1 || senha.length() < 1) {
+                        if(placa.length() < 1 || usuario.length() < 1 ) {
                             throw new ExceptionCamposVazios();
                         } 
 
                         if(car.getPlaca().equals(placa) && car.getUsuario().equals(usuario) && car.getSenha().equals(senha)) {
                             UserList.excluirCarro(car);
-                            labelLogado.setText("USUÁRIO EXCLUÍDO");
+                            labelLogado.setText("Cadastro Excluído");
+                            labelLogado.setTextFill(Paint.valueOf("#FF0000"));
+                            labelUsuario.setText("");
+                            labelSenha.setText(" ");
+                            labelPlaca.setText("");
 
                         }
                     }

@@ -69,6 +69,7 @@ public class AlterarValorController {
         }
         catch (Exception exception) {
             labelNovoValor.setText("Valor não alterado!");
+            labelNovoValor.setTextFill(Paint.valueOf("FF0000"));
         }
         finally {
             System.err.println("FIM");

@@ -6,7 +6,7 @@ import arduino.*;
 
 public class ArduinoComands {
 
-    static Arduino obj = new Arduino("COM4",115200);
+    static Arduino obj = new Arduino("COM5",115200);
 
     public static void abrirArduino() throws InterruptedException {
         obj.openConnection();
