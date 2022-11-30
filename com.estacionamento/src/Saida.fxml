@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="465.0" fitWidth="417.0" layoutX="-13.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Imagens/image00001%20(6).png" />
+                  <Image url="file:/C:/Users/samue/Área%20de%20Trabalho/MoemaParking-main/Imagens/image00001%20(6).png" />
                </image>
             </ImageView>
             <Text fill="#376e9a" layoutX="538.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MoemaParking">
@@ -34,7 +34,7 @@
             </Button>
             <ImageView fitHeight="167.0" fitWidth="375.0" layoutX="468.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Imagens/IMG_20220601_193343.png" />
+                  <Image url="file:/C:/Users/samue/Área%20de%20Trabalho/MoemaParking-main/Imagens/IMG_20220601_193343.png" />
                </image>
             </ImageView>
             <Text fill="#376e9a" layoutX="507.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLTE SEMPRE!">

@@ -22,7 +22,7 @@
             </Text>
             <TextField fx:id="campoUsuario" layoutX="564.0" layoutY="162.0" />
             <TextField fx:id="campoSenha" layoutX="564.0" layoutY="199.0" />
-            <Button fx:id="buttonCriar" layoutX="617.0" layoutY="240.0" mnemonicParsing="false" onAction="#criarConta" style="-fx-background-color: #376e9a;" text="Criar" textFill="WHITE">
+            <Button fx:id="buttonCriar" defaultButton="true" layoutX="617.0" layoutY="240.0" mnemonicParsing="false" onAction="#criarConta" style="-fx-background-color: #376e9a;" text="Criar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -34,10 +34,10 @@
             <Text layoutX="518.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
             <ImageView fitHeight="417.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Imagens/image00001%20(6).png" />
+                  <Image url="file:/C:/Users/samue/Área%20de%20Trabalho/MoemaParking-main/Imagens/image00001%20(6).png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonExit" layoutX="873.0" layoutY="375.0" mnemonicParsing="false" onAction="#exit" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
+            <Button fx:id="buttonExit" cancelButton="true" layoutX="873.0" layoutY="375.0" mnemonicParsing="false" onAction="#exit" prefHeight="19.0" prefWidth="45.0" style="-fx-background-color: #376e9a;" text="EXIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="9.0" />
                </font>
@@ -57,7 +57,7 @@
             <Text layoutX="558.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Placa" />
             <ImageView fitHeight="143.0" fitWidth="278.0" layoutX="518.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Imagens/image00001%20(4).png" />
+                  <Image url="file:/C:/Users/samue/Área%20de%20Trabalho/MoemaParking-main/Imagens/image00001%20(4).png" />
                </image>
             </ImageView>
             <Label fx:id="labelPlaca" layoutX="623.0" layoutY="144.0" prefHeight="17.0" prefWidth="149.0" textFill="#dd0303" />
